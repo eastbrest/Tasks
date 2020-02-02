@@ -16,8 +16,11 @@ public class Task1 {
     public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
     	int[] array = new int[7];
+    	int summary = 0;
 		for (int i = 0; i < array.length; i++) {
 			array[i] = scanner.nextInt();
+			if (((array[i]%2)==0) && (array[i]>0)) summary += array[i];
 		}
+		System.out.println(summary);
     }
 }

@@ -18,8 +18,24 @@ public class Task3 {
     public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int[] array = new int[5];
+		int min, min_index = 0;
 		for (int i = 0; i < array.length; i++) {
 			array[i] = scanner.nextInt();
+			}
+		if (array[0] < 0) min = -1*array[0];
+		else min = array[0];
+		for (int i = 1; i < array.length; i++) {
+			if (array[i] < 0) {
+				if ((-1*array[i]) < min) {
+					min = -1*array[i];
+					min_index = i;
+				}
+			}
+			else if (array[i] < min) {
+				min = array[i];
+				min_index = i;
+			}
 		}
+		System.out.println(min_index);
     }
 }
