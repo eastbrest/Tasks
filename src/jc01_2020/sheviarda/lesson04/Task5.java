@@ -18,10 +18,25 @@ public class Task5 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int[][] array = new int[4][3];
+		int summary, index, max;
+		max = 0;
 		for (int i = 0; i < array[0].length; i++) {
 			for (int j = 0; j < array.length; j++) {
 				array[j][i] = scanner.nextInt();
 			}
+			max += array[0][i];
 		}
+		index = 0;
+		for (int j = 1; j < array.length; j++) {
+			summary = 0;
+			for (int i = 0; i < array[0].length; i++) {
+				summary += array[j][i];
+				}
+			if (summary > max) {
+				max = summary;
+				index = j;
+			}
+		}
+		System.out.println(index);
 	}
 }
